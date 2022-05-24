@@ -1,0 +1,779 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="清茶">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1、什么是程序程序就是指令的集合 程序员通过 语言 给机器 下指令 人机之间交流的语言：Java	php	Python	c	c#	c++ 语言分类：从计算机识别的角度 1、编译型语言：JAVA	php	Python	c	c#	c++ 2、解释型语言：Html	JavaScript	js 名词：JVM：java虚拟机	作用：运行java程序，运行.class文件 JRE：java运行时环境，提供资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识Java">
+<meta property="og:url" content="http://example.com/2022/05/23/%E5%88%9D%E8%AF%86Java/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、什么是程序程序就是指令的集合 程序员通过 语言 给机器 下指令 人机之间交流的语言：Java	php	Python	c	c#	c++ 语言分类：从计算机识别的角度 1、编译型语言：JAVA	php	Python	c	c#	c++ 2、解释型语言：Html	JavaScript	js 名词：JVM：java虚拟机	作用：运行java程序，运行.class文件 JRE：java运行时环境，提供资源">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/Snipaste_2022-05-23_20-25-25.png">
+<meta property="article:published_time" content="2022-05-23T12:23:00.000Z">
+<meta property="article:modified_time" content="2022-05-24T12:03:23.035Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaSE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/images/Snipaste_2022-05-23_20-25-25.png">
+  
+  
+  
+  <title>初识Java - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>清茶的成长笔记</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                目录
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="初识Java"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-05-23 20:23" pubdate>
+          2022年5月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">初识Java</h1>
+            
+            <div class="markdown-body">
+              
+              <h3 id="1、什么是程序"><a href="#1、什么是程序" class="headerlink" title="1、什么是程序"></a>1、什么是程序</h3><p>程序就是指令的集合</p>
+<p>程序员通过 语言 给机器 下指令</p>
+<p>人机之间交流的语言：Java	php	Python	c	c#	c++</p>
+<p>语言分类：从计算机识别的角度</p>
+<p>1、编译型语言：JAVA	php	Python	c	c#	c++</p>
+<p>2、解释型语言：Html	JavaScript	js</p>
+<h6 id="名词："><a href="#名词：" class="headerlink" title="名词："></a>名词：</h6><p>JVM：java虚拟机	作用：运行java程序，运行.class文件</p>
+<p>JRE：java运行时环境，提供资源</p>
+<p>JDK：java开发工具，包含JRE、JVM等</p>
+<h3 id="2、Java的优势"><a href="#2、Java的优势" class="headerlink" title="2、Java的优势"></a>2、Java的优势</h3><p>1、面向对象	</p>
+<p>2、简单性：内存管理	语法等</p>
+<p>3、跨平台	</p>
+<p>4、开源</p>
+<p>5、一处编写，多处运行</p>
+<h3 id="3、Java的运行环境"><a href="#3、Java的运行环境" class="headerlink" title="3、Java的运行环境"></a>3、Java的运行环境</h3><p>jdk：java开发工具	编译器	</p>
+<p>jre：java运行时环境	提供资源</p>
+<p>jvm：java虚拟机	运行指令</p>
+<h3 id="4、编写第一个Java程序-hello-world"><a href="#4、编写第一个Java程序-hello-world" class="headerlink" title="4、编写第一个Java程序 hello,world!"></a>4、编写第一个Java程序 hello,world!</h3><p>1、编写java文件，可以在任何位置编写</p>
+<p>​	新建一个记事本文件，要求：</p>
+<p>​		1、扩展名.java</p>
+<p>​		2、使用英文命名，首字母大写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(Strinng[] args)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;hello,world!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>2、编译</p>
+<p>javac Test.java</p>
+<p>3、运行</p>
+<p>java 文件名</p>
+<h3 id="5、java类的使用"><a href="#5、java类的使用" class="headerlink" title="5、java类的使用"></a>5、java类的使用</h3><p>一个.java文件中，可以有多个class，但是public的类只能有一个，而且类的名字要和文件名一致</p>
+<p>在实际开发中，一个文件只有一个类</p>
+<h3 id="6、包"><a href="#6、包" class="headerlink" title="6、包"></a>6、包</h3><p>包，就是文件夹，作用是组织、管理、存放类的</p>
+<p>命名规范：1、字母都小写</p>
+<p>​                   组成：域名.公司名.项目名.具体内容</p>
+<p>​					com.qf.pro2103.day02</p>
+<p>在包里新建类</p>
+<p>关于名称</p>
+<p>1、项目名	有意义的单词，通常都小写</p>
+<p>2、包名	</p>
+<p>3、类名	英文单词或者单词组成，首字母大写</p>
+<h3 id="7、注释"><a href="#7、注释" class="headerlink" title="7、注释"></a>7、注释</h3><p>注释：对代码的解释、说明</p>
+<p>【说明】注释不会被编译、运行</p>
+<p>java中有3种注释</p>
+<p>1、单行注释：以	&#x2F;&#x2F;	开始，当前行</p>
+<p>2、多行注释：</p>
+<p>&#x2F;*	</p>
+<p>​		注释1</p>
+<p>​		注释2</p>
+<p>*&#x2F;</p>
+<p>3、文档注释：</p>
+<p>&#x2F;**	</p>
+<p>*&#x2F;</p>
+<h3 id="8、标识符"><a href="#8、标识符" class="headerlink" title="8、标识符"></a>8、标识符</h3><p>项目名	包名	类名	变量名	方法名等</p>
+<p>1、见名知其意	可以用单词或单词组成</p>
+<p>2、组成：字母(区分大小写)、数字、$、_ 组成</p>
+<p>​		数字不能作为开头</p>
+<p>​		不能是java的关键字或保留字</p>
+<p>类名：由一个或多个单词组成，每个单词首字母大写，采用帕斯卡命名法</p>
+<p>包名：小写，用 . 做分割，但是 . 不能开头和结尾</p>
+<p>项目名：都小写</p>
+<p>变量名：由一个或多个单词组成，首字母小写，其余单词首字母大写，采用驼峰命名法</p>
+<p>了解：</p>
+<p>java的组成：</p>
+<p>1、javaSE：java标准版，核心，java语法部分</p>
+<p>2、javaEE：java企业级开发，javaWeb及框架部分</p>
+<p>3、javaME：java移动开发（用的少）</p>
+<h3 id="9、计算机的组成"><a href="#9、计算机的组成" class="headerlink" title="9、计算机的组成"></a>9、计算机的组成</h3><p>CPU	运行</p>
+<p>内存：存放的数据是临时的</p>
+<p>硬盘：存放的数据是永久的</p>
+<p>CPU—-&gt;内存获取—-&gt;磁盘读取</p>
+<h3 id="10、变量"><a href="#10、变量" class="headerlink" title="10、变量"></a>10、变量</h3><p>概念：内存空间</p>
+<p>三要素：数据类型	变量名（内存的地址）	变量的值</p>
+<p>initialized	初始化</p>
+<p>变量声明的三种方式<br><img src="/images/Snipaste_2022-05-23_20-25-25.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="11、java-的数据类型—重要"><a href="#11、java-的数据类型—重要" class="headerlink" title="11、java 的数据类型—重要"></a>11、java 的数据类型—重要</h3><p>两种类型：</p>
+<p>1、基本数据类型：8个</p>
+<p>2、引用类型：无数个</p>
+<h4 id="基本类型："><a href="#基本类型：" class="headerlink" title="基本类型："></a>基本类型：</h4><p>整数：没有小数，可以是正数也可以是负数。</p>
+<p>小数：有小数部分，即使小数部分是0</p>
+<p>float的小数位数是7~8位</p>
+<p>double的小数位数是15~16位</p>
+<p>【说明】float、double存放的是近似值。</p>
+<p>布尔值</p>
+<p><strong>char	2字节	使用单引号括起来的单个字符</strong></p>
+<h1 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h1><p>1、程序是程序员用编程语言给机器下达指令的集合</p>
+<p>2、java的优势：面向对象，简单，开源，跨平台</p>
+<p>3.java的运行环境：</p>
+<p>jdk是java开发工具	包含jre	jvm</p>
+<p>jre是java运行时环境	提供资源</p>
+<p>jvm是java虚拟机	运行程序</p>
+<p>4、java程序的结构</p>
+<p>public class 类名{</p>
+<p>​    public static void main （String[] args）{</p>
+<p>​		代码</p>
+<p>​	}</p>
+<p>}</p>
+<p>5、类的使用</p>
+<p>一个.java程序中只能有一个public类，可以有多个class类</p>
+<p>6、包</p>
+<p>命名都是小写：域名.公司名.项目名.内容名称</p>
+<p>7、注释：单行注释	&#x2F;&#x2F;	多行注释	&#x2F;*		<em>&#x2F;	文档注释	&#x2F;</em>*		*&#x2F;</p>
+<p>8、标识符：见名知其意，大小写字母，数字，$，_不能以数字开头，不能是java关键字和保留字</p>
+<p>类名：帕斯卡命名，每个单词首字母大写</p>
+<p>包名：全小写</p>
+<p>变量名：首字母小写，其余单词首字母大写，驼峰命名法</p>
+<p>9、变量3要素</p>
+<p>数据类型，变量名，值</p>
+<p>10、java的数据类型</p>
+<p>byte	1字节</p>
+<p>short	2字节</p>
+<p>int	4字节</p>
+<p>long	8字节</p>
+<p>float	4字节</p>
+<p>double	8字节</p>
+<p>boolean	1字节</p>
+<p>char	2字节</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaSE/" class="category-chain-item">JavaSE</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaSE/">#JavaSE</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>初识Java</div>
+      <div>http://example.com/2022/05/23/初识Java/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>清茶</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年5月23日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

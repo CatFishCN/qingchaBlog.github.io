@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>初识Java</title>
+    <link href="/2022/05/23/%E5%88%9D%E8%AF%86Java/"/>
+    <url>/2022/05/23/%E5%88%9D%E8%AF%86Java/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1、什么是程序"><a href="#1、什么是程序" class="headerlink" title="1、什么是程序"></a>1、什么是程序</h3><p>程序就是指令的集合</p><p>程序员通过 语言 给机器 下指令</p><p>人机之间交流的语言：JavaphpPythoncc#c++</p><p>语言分类：从计算机识别的角度</p><p>1、编译型语言：JAVAphpPythoncc#c++</p><p>2、解释型语言：HtmlJavaScriptjs</p><h6 id="名词："><a href="#名词：" class="headerlink" title="名词："></a>名词：</h6><p>JVM：java虚拟机作用：运行java程序，运行.class文件</p><p>JRE：java运行时环境，提供资源</p><p>JDK：java开发工具，包含JRE、JVM等</p><h3 id="2、Java的优势"><a href="#2、Java的优势" class="headerlink" title="2、Java的优势"></a>2、Java的优势</h3><p>1、面向对象</p><p>2、简单性：内存管理语法等</p><p>3、跨平台</p><p>4、开源</p><p>5、一处编写，多处运行</p><h3 id="3、Java的运行环境"><a href="#3、Java的运行环境" class="headerlink" title="3、Java的运行环境"></a>3、Java的运行环境</h3><p>jdk：java开发工具编译器</p><p>jre：java运行时环境提供资源</p><p>jvm：java虚拟机运行指令</p><h3 id="4、编写第一个Java程序-hello-world"><a href="#4、编写第一个Java程序-hello-world" class="headerlink" title="4、编写第一个Java程序 hello,world!"></a>4、编写第一个Java程序 hello,world!</h3><p>1、编写java文件，可以在任何位置编写</p><p>​新建一个记事本文件，要求：</p><p>​1、扩展名.java</p><p>​2、使用英文命名，首字母大写</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(Strinng[] args)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;hello,world!&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>2、编译</p><p>javac Test.java</p><p>3、运行</p><p>java 文件名</p><h3 id="5、java类的使用"><a href="#5、java类的使用" class="headerlink" title="5、java类的使用"></a>5、java类的使用</h3><p>一个.java文件中，可以有多个class，但是public的类只能有一个，而且类的名字要和文件名一致</p><p>在实际开发中，一个文件只有一个类</p><h3 id="6、包"><a href="#6、包" class="headerlink" title="6、包"></a>6、包</h3><p>包，就是文件夹，作用是组织、管理、存放类的</p><p>命名规范：1、字母都小写</p><p>​                   组成：域名.公司名.项目名.具体内容</p><p>​com.qf.pro2103.day02</p><p>在包里新建类</p><p>关于名称</p><p>1、项目名有意义的单词，通常都小写</p><p>2、包名</p><p>3、类名英文单词或者单词组成，首字母大写</p><h3 id="7、注释"><a href="#7、注释" class="headerlink" title="7、注释"></a>7、注释</h3><p>注释：对代码的解释、说明</p><p>【说明】注释不会被编译、运行</p><p>java中有3种注释</p><p>1、单行注释：以&#x2F;&#x2F;开始，当前行</p><p>2、多行注释：</p><p>&#x2F;*</p><p>​注释1</p><p>​注释2</p><p>*&#x2F;</p><p>3、文档注释：</p><p>&#x2F;**</p><p>*&#x2F;</p><h3 id="8、标识符"><a href="#8、标识符" class="headerlink" title="8、标识符"></a>8、标识符</h3><p>项目名包名类名变量名方法名等</p><p>1、见名知其意可以用单词或单词组成</p><p>2、组成：字母(区分大小写)、数字、$、_ 组成</p><p>​数字不能作为开头</p><p>​不能是java的关键字或保留字</p><p>类名：由一个或多个单词组成，每个单词首字母大写，采用帕斯卡命名法</p><p>包名：小写，用 . 做分割，但是 . 不能开头和结尾</p><p>项目名：都小写</p><p>变量名：由一个或多个单词组成，首字母小写，其余单词首字母大写，采用驼峰命名法</p><p>了解：</p><p>java的组成：</p><p>1、javaSE：java标准版，核心，java语法部分</p><p>2、javaEE：java企业级开发，javaWeb及框架部分</p><p>3、javaME：java移动开发（用的少）</p><h3 id="9、计算机的组成"><a href="#9、计算机的组成" class="headerlink" title="9、计算机的组成"></a>9、计算机的组成</h3><p>CPU运行</p><p>内存：存放的数据是临时的</p><p>硬盘：存放的数据是永久的</p><p>CPU—-&gt;内存获取—-&gt;磁盘读取</p><h3 id="10、变量"><a href="#10、变量" class="headerlink" title="10、变量"></a>10、变量</h3><p>概念：内存空间</p><p>三要素：数据类型变量名（内存的地址）变量的值</p><p>initialized初始化</p><p>变量声明的三种方式<br><img src="/images/Snipaste_2022-05-23_20-25-25.png"></p><h3 id="11、java-的数据类型—重要"><a href="#11、java-的数据类型—重要" class="headerlink" title="11、java 的数据类型—重要"></a>11、java 的数据类型—重要</h3><p>两种类型：</p><p>1、基本数据类型：8个</p><p>2、引用类型：无数个</p><h4 id="基本类型："><a href="#基本类型：" class="headerlink" title="基本类型："></a>基本类型：</h4><p>整数：没有小数，可以是正数也可以是负数。</p><p>小数：有小数部分，即使小数部分是0</p><p>float的小数位数是7~8位</p><p>double的小数位数是15~16位</p><p>【说明】float、double存放的是近似值。</p><p>布尔值</p><p><strong>char2字节使用单引号括起来的单个字符</strong></p><h1 id="今日总结"><a href="#今日总结" class="headerlink" title="今日总结"></a>今日总结</h1><p>1、程序是程序员用编程语言给机器下达指令的集合</p><p>2、java的优势：面向对象，简单，开源，跨平台</p><p>3.java的运行环境：</p><p>jdk是java开发工具包含jrejvm</p><p>jre是java运行时环境提供资源</p><p>jvm是java虚拟机运行程序</p><p>4、java程序的结构</p><p>public class 类名{</p><p>​    public static void main （String[] args）{</p><p>​代码</p><p>​}</p><p>}</p><p>5、类的使用</p><p>一个.java程序中只能有一个public类，可以有多个class类</p><p>6、包</p><p>命名都是小写：域名.公司名.项目名.内容名称</p><p>7、注释：单行注释&#x2F;&#x2F;多行注释&#x2F;*<em>&#x2F;文档注释&#x2F;</em>**&#x2F;</p><p>8、标识符：见名知其意，大小写字母，数字，$，_不能以数字开头，不能是java关键字和保留字</p><p>类名：帕斯卡命名，每个单词首字母大写</p><p>包名：全小写</p><p>变量名：首字母小写，其余单词首字母大写，驼峰命名法</p><p>9、变量3要素</p><p>数据类型，变量名，值</p><p>10、java的数据类型</p><p>byte1字节</p><p>short2字节</p><p>int4字节</p><p>long8字节</p><p>float4字节</p><p>double8字节</p><p>boolean1字节</p><p>char2字节</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaSE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaSE</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
